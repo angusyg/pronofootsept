@@ -1,0 +1,82 @@
+{
+  "name": "pronofootsept",
+  "version": "1.0.0",
+  "description": "Pronofoot Sept website",
+  "main": "backend/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"nodemon\" \"set NODE_ENV=development&& gulp\"",
+    "start": "node backend/app.js",
+    "postinstall": "set NODE_ENV=production&& node ./node_modules/gulp/bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/angusyg/pronofootsept.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angularjs",
+    "express"
+  ],
+  "author": "angusyg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angusyg/pronofootsept/issues"
+  },
+  "homepage": "https://github.com/angusyg/pronofootsept#readme",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-messages": "^1.6.9",
+    "angular-storage": "0.0.15",
+    "angular-translate": "^2.17.0",
+    "angular-translate-loader-partial": "^2.17.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "camo": "^0.12.3",
+    "compression": "^1.7.2",
+    "continuation-local-storage": "^3.2.1",
+    "cors": "^2.8.4",
+    "csurf": "^1.9.0",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-pino-logger": "^3.0.1",
+    "helmet": "^3.12.0",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.2.0",
+    "kindof": "^2.0.0",
+    "pino": "^4.14.0",
+    "pino-debug": "^1.1.1",
+    "pino-multi-stream": "^3.1.2",
+    "ui-bootstrap4": "^3.0.2",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "del": "^3.0.0",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-angular": "^3.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.0",
+    "gulp-util": "^3.0.8",
+    "nodemon": "^1.17.2",
+    "pump": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}

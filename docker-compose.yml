@@ -1,0 +1,7 @@
+version: "3"
+services:
+  pfs:
+    env_file:
+      - production.env
+    image: "pfs:production"
+    restart: always
