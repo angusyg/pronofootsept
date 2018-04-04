@@ -10,7 +10,7 @@ const camo = require('camo');
 
 const { logger } = require('../helpers/logger')();
 
-const dbFolder = path.join(__dirname, '..', 'data');
+const dbFolder = path.join(__dirname, '..', '..', 'data');
 
 module.exports = () => {
   camo.connect(`nedb://${dbFolder}`)

@@ -13,6 +13,9 @@
   AuthService.$inject = ['$http', 'store', '$q', '$rootScope', '$transitions', 'helper', 'SECURITY', 'AUTH_EVENTS', 'API'];
 
   function AuthService($http, store, $q, $rootScope, $transitions, helper, SECURITY, AUTH_EVENTS, API) {
+    const LOGIN_ENDPOINT = `${API.URL}${API.BASE}/login`;
+    const LOGOUT_ENDPOINT = `${API.URL}${API.BASE}/logout`;
+    const REFRESH_ENDPOINT = `${API.URL}${API.BASE}/refresh`;
     let refreshRequestLoading = false;
 
     return {
@@ -47,7 +50,7 @@
     }
 
     function login(user) {
-      return $http.post(`${API.URL}${API.BASE}/login`, user)
+      return $http.post(LOGIN_ENDPOINT, user)
         .then(response => {
           store.set(SECURITY.ACCESS_TOKEN, response.accessToken);
           store.set(SECURITY.REFRESH_TOKEN, response.refreshToken);
@@ -56,7 +59,7 @@
     }
 
     function logout() {
-      return $http.get(`${API.URL}${API.BASE}/logout`)
+      return $http.get(LOGOUT_ENDPOINT)
         .then(response => {
           store.remove(SECURITY.ACCESS_TOKEN);
           store.remove(SECURITY.REFRESH_TOKEN);
@@ -67,7 +70,7 @@
     function refreshToken() {
       if (!refreshRequestLoading) {
         refreshRequestLoading = true;
-        return $http.get(`${API.URL}${API.BASE}/refresh`)
+        return $http.get(REFRESH_ENDPOINT)
           .then(response => {
             store.set(SECURITY.ACCESS_TOKEN, response.accessToken);
             return $q.resolve();
@@ -77,18 +80,20 @@
     }
 
     function stateSecurization() {
-      if (SECURITY.ACTIVATED) $transitions.onStart({ to: '*' }, trans => {
-        const toState = trans.$to();
-        if (toState.data && toState.data.authorizedRoles) {
-          if (!isLoggedIn()) {
-            $rootScope.$broadcast(AUTH_EVENTS.NOT_AUTHENTICATED, trans);
-            return false;
-          } else if (!isAuthorized(toState.data.authorizedRoles)) {
-            $rootScope.$broadcast(AUTH_EVENTS.NOT_AUTHORIZED, trans);
-            return false;
+      if (SECURITY.ACTIVATED) {
+        $transitions.onStart({ to: '*' }, trans => {
+          const toState = trans.$to();
+          if (toState.data && toState.data.authorizedRoles) {
+            if (!isLoggedIn()) {
+              $rootScope.$broadcast(AUTH_EVENTS.NOT_AUTHENTICATED, trans);
+              return false;
+            } else if (!isAuthorized(toState.data.authorizedRoles)) {
+              $rootScope.$broadcast(AUTH_EVENTS.NOT_AUTHORIZED, trans);
+              return false;
+            }
           }
-        }
-      });
+        });
+      }
     }
   }
 })();

@@ -23,7 +23,7 @@
         const levels = ['debug', 'info', 'warn', 'error'];
         levels.forEach(level => {
           const original = $delegate[level];
-          $delegate[level] = function() {
+          $delegate[level] = () => {
             const message = Array.prototype.slice.call(arguments);
             original(...arguments);
             $.ajax({

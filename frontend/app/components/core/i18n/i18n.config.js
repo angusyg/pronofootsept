@@ -12,8 +12,10 @@
   Config.$inject = ['$translateProvider', '$translatePartialLoaderProvider'];
 
   function Config($translateProvider, $translatePartialLoaderProvider) {
-    $translatePartialLoaderProvider.addPart('core');
-    $translateProvider.useLoader('$translatePartialLoader', { urlTemplate: '/i18n/{part}/{lang}.json' });
+    $translateProvider.useLoader('$translatePartialLoader', {
+      urlTemplate: '/i18n/{part}/{lang}.json',
+      loadFailureHandler: 'i18nPartialLoaderErrorHandler',
+    });
     $translateProvider.preferredLanguage('fr');
     $translateProvider.forceAsyncReload(true);
   }
