@@ -1,195 +1,806 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#"><img src="images/logo.png"></img></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item selected">
-          <a class="nav-link" href="#">Pronostiques</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Classement</a>
-        </li>
-      </ul>
+<div class="row content">
+  <div class="col-2 sidebar position-fixed">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Pronostiques</a>
+        <div class="submenu">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Phase de poule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Huitème de finale</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Quart de poule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Demie-finale</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Finale</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="//codeply.com">Classement</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-9 offset-2">
+    <div class="row d-flex justify-content-center">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" translate>HELLO_WORLD</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</nav>
-
-<div class="container">
-  <div class="row d-flex justify-content-center">
-    <nav>
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" translate>HELLO_WORLD</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div class="row d-flex justify-content-center">
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card match">
-        <h5 class="card-header text-center">Groupe A - 20:00</h5>
-        <div class="card-body">
-          <div class="row text-center">
-            <div class="col-5">
-              <img src="images/fra.png" class="flag">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
             </div>
-            <div class="col-5 offset-2">
-              <img src="images/rus.png" class="flag">
-            </div>
-          </div>
-          <form class="" ng-submit="match.save()">
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
             <div class="row">
               <div class="col-5">
-                <select class="form-control text-center" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <p class="text-center">
+                <p class="text-center">FRANCE
                   <p>
               </div>
-              <div class="col-5">
-                <select class="form-control text-center" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
               </div>
             </div>
-          </form>
-          <div class="row">
-            <div class="col-5">
-              <p class="text-center">FRANCE
-                <p>
-            </div>
-            <div class="col-5 offset-2">
-              <p class="text-center">RUSSIE
-                <p>
-            </div>
           </div>
-        </div>
-        <div class="card-footer text-center">
-          <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card match">
-        <h5 class="card-header text-center">Groupe A - 20:00</h5>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-5">
-              <p class="text-center">France
-                <p>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
             </div>
-            <div class="col-5 offset-2">
-              <p class="text-center">Russie
-                <p>
-            </div>
-          </div>
-          <form class="" ng-submit="match.save()">
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
             <div class="row">
               <div class="col-5">
-                <select class="form-control" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <p class="text-center">-
+                <p class="text-center">FRANCE
                   <p>
               </div>
-              <div class="col-5">
-                <select class="form-control text-center" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="card-footer text-center">
-          <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card match">
-        <h5 class="card-header text-center">Groupe A - 20:00</h5>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-5">
-              <p class="text-center">France
-                <p>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
             </div>
-            <div class="col-5 offset-2">
-              <p class="text-center">Russie
-                <p>
-            </div>
-          </div>
-          <form class="" ng-submit="match.save()">
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
             <div class="row">
               <div class="col-5">
-                <select class="form-control" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <p class="text-center">-
+                <p class="text-center">FRANCE
                   <p>
               </div>
-              <div class="col-5">
-                <select class="form-control text-center" id="goalHome">
-                  <option></option>
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
               </div>
             </div>
-          </form>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
         </div>
-        <div class="card-footer text-center">
-          <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card match">
+          <h5 class="card-header text-center">Groupe A - 20:00</h5>
+          <div class="card-body">
+            <div class="row text-center">
+              <div class="col-5">
+                <img src="images/fra.png" class="flag">
+              </div>
+              <div class="col-5 offset-2">
+                <img src="images/rus.png" class="flag">
+              </div>
+            </div>
+            <form class="" ng-submit="match.save()">
+              <div class="row">
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                  <p class="text-center">
+                    <p>
+                </div>
+                <div class="col-5">
+                  <select class="form-control text-center" id="goalHome">
+                      <option></option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-5">
+                <p class="text-center">FRANCE
+                  <p>
+              </div>
+              <div class="col-5 offset-2">
+                <p class="text-center">RUSSIE
+                  <p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <h5><span class="badge badge-primary">0 point (3-2)</span></h5>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

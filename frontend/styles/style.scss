@@ -7,7 +7,9 @@ html {
 
 body {
   min-height: 100%;
-  background-image: url("/images/fwc_darkbluebg4.png");
+  background: url("/images/fwc_darkbluebg1.png");
+  background-attachment: fixed;
+  //background-color: rgba(43, 85, 119, 1);
 }
 /******************* Modal ******************/
 .frontend-app {
@@ -16,7 +18,7 @@ body {
     color: rgba(255, 255 ,255 ,1);
 
     img {
-      width: 35px;
+      width: 100px;
     }
   }
 
@@ -28,12 +30,15 @@ body {
 
   .modal-footer {
     border: 0;
-    padding-top: 0;
+    padding: 0;
+
+    .btn {
+      margin-bottom: 20px;
+    }
   }
 }
 /******************* Modal ******************/
 /***************** Animation ****************/
-
 .shake {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
@@ -64,31 +69,27 @@ body {
 }
 /***************** Animation ****************/
 /******************* Forms ******************/
-
 .form-control {
   background-color: rgba(217, 223, 232, 1);
   border: 0;
 }
 
 .input-group-text {
-  background-color: transparent;
-  border: none;
+  background-color: rgba(217, 223, 232, 1);
+  //border: none;
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .input-group > .custom-select:not(:first-child),
 .input-group > .form-control-sm:not(:first-child) {
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
+  //border-top-left-radius: 0.2rem;
+  //border-bottom-left-radius: 0.2rem;
 }
 
-.input-group .form-control-sm {
-  margin-right: 24px;
-}
+
 /******************* Forms ******************/
 /****************** Navbar ******************/
-
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
@@ -102,6 +103,11 @@ body {
     }
   }
 
+  .nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
   .nav-item.selected {
     background-image: url("/images/fwc_darkbluebg4.png");
   }
@@ -111,7 +117,6 @@ body {
   }
 }
 /****************** Navbar ******************/
-
 .card.match {
   border: 0;
   margin-bottom: 30px;
@@ -119,7 +124,8 @@ body {
   .card-header {
     margin-left: 10px;
     margin-right: 10px;
-    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(43, 85, 119, 1);
+    //border-bottom: 1px solid rgba(255, 0, 0, 0.5);
   }
 
   h5.card-header {
@@ -137,6 +143,8 @@ body {
 
     select {
       text-align-last: center;
+      background-color: white;
+      border: 1px solid rgba(43, 85, 119, 1);
     }
   }
 
@@ -153,7 +161,8 @@ body {
     margin-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
-    border-top: 1px solid rgba(255, 0, 0, 0.5);
+    border-top: 1px solid rgba(43, 85, 119, 1);
+    //border-top: 1px solid rgba(255, 0, 0, 0.5);
 
     h5 {
       margin-top: 8px;
@@ -173,9 +182,37 @@ body {
 }
 
 .page-link:hover {
-  color: rgba(241, 142, 142, 1);
+  color: rgba(150, 196, 232, 1);
+  //color: rgba(241, 142, 142, 1);
 }
 
 .page-link:focus {
   box-shadow: none;
+}
+
+.row.content {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.25);
+  min-height: 100vh;
+  padding: 15px 0 0 0;
+
+  .nav-link {
+    padding-left: 2em;
+    color: white;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .submenu {
+
+    .nav-link {
+      padding-left: 4em;
+    }
+  }
 }

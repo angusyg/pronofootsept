@@ -23,7 +23,7 @@
           USER_ROLES.ADMIN,
           USER_ROLES.USER,
         ]
-      }
+      },
     };
 
     $stateProvider.state(homeState);

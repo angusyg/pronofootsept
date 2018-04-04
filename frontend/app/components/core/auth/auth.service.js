@@ -52,8 +52,8 @@
     function login(user) {
       return $http.post(LOGIN_ENDPOINT, user)
         .then(response => {
-          store.set(SECURITY.ACCESS_TOKEN, response.accessToken);
-          store.set(SECURITY.REFRESH_TOKEN, response.refreshToken);
+          store.set(SECURITY.ACCESS_TOKEN, response.data.accessToken);
+          store.set(SECURITY.REFRESH_TOKEN, response.data.refreshToken);
           return $q.resolve();
         });
     }
@@ -72,7 +72,7 @@
         refreshRequestLoading = true;
         return $http.get(REFRESH_ENDPOINT)
           .then(response => {
-            store.set(SECURITY.ACCESS_TOKEN, response.accessToken);
+            store.set(SECURITY.ACCESS_TOKEN, response.data.accessToken);
             return $q.resolve();
           })
           .finally(() => refreshRequestLoading = false);

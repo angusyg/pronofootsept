@@ -6,7 +6,7 @@
 const kindOf = require('kindof');
 
 const ns = 'models:error:api';
-const { logger } = require('../../helpers/logger')(ns);
+const { debug, logger } = require('../../helpers/logger')(ns);
 
 /**
  * The built-in class for creating error object
@@ -45,12 +45,14 @@ class ApiError extends Error {
      * @member {number}
      */
     this.statusCode = 500;
-
     if (args.length === 1) {
       const type = kindOf(args[0]);
       if (type === 'error') this.message = args[0].message;
       else if (type === 'string') this.message = args[0];
-      else throw new TypeError(`Invalid type '${type}' for new ApiError argument`);
+      else if (type === 'array' && args[0].length === 2) {
+        this.code = args[0][0];
+        this.message = args[0][1];
+      } else throw new TypeError(`Invalid type '${type}' for new ApiError argument`);
     } else if (args.length === 2) {
       let type = kindOf(args[0]);
       if (type === 'string') this.code = args[0];

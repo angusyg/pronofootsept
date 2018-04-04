@@ -32,6 +32,7 @@
       let HTTP_STATUS_CODE = $injector.get('HTTP_STATUS_CODE');
       if (err.status === HTTP_STATUS_CODE.UNAUTHORIZED_ACCESS) {
         let $rootScope = $injector.get('$rootScope');
+        let AUTH_EVENTS = $injector.get('AUTH_EVENTS');
         $rootScope.$broadcast(AUTH_EVENTS.NOT_AUTHENTICATED, err.config);
         return $q.reject(err);
       } else if (err.status === HTTP_STATUS_CODE.AUTHENTICATION_EXPIRED) {
@@ -39,6 +40,7 @@
         return authService.refreshToken()
           .catch(err => $q.reject(err))
           .then(response => {
+            let SECURITY = $injector.get('SECURITY');
             err.config.headers[SECURITY.ACCESS_TOKEN_HEADER] = `Bearer ${authService.getToken()}`;
             return $injector.get('$http')(err.config)
               .catch(err => $q.reject(err))
