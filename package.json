@@ -4,10 +4,16 @@
   "description": "Pronofoot Sept website",
   "main": "backend/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon\" \"set NODE_ENV=development&& gulp\"",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "concurrently \"node ./node_modules/nodemon/bin/nodemon\" \"set NODE_ENV=development&& node ./node_modules/gulp/bin/gulp\"",
     "start": "node backend/app.js",
-    "postinstall": "set NODE_ENV=production&& node ./node_modules/gulp/bin/gulp"
+    "postinstall": "set NODE_ENV=production&& node ./node_modules/gulp/bin/gulp",
+    "release:patch": "npm test && git commit -m \"==> NEW RELEASE:patch <==\" && git push",
+    "release:minor": "git commit -m \"==> NEW RELEASE:minor <==\" && git push",
+    "release:major": "git commit -m \"==> NEW RELEASE:major <==\" && git push",
+    "preversion": "git checkout develop && git pull",
+    "version": "git checkout -b release/$npm_package_version && git push --set-upstream origin release/$npm_package_version && npm test",
+    "postversion": "git checkout master && git merge --no-ff release/$npm_package_version && git checkout develop && git merge --no-ff release/$npm_package_version && git branch -d release/$npm_package_version && git push --all && git push --tags"
   },
   "repository": {
     "type": "git",
