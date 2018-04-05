@@ -14,9 +14,8 @@ const { debug } = require('../../helpers/logger')(ns);
  * @extends {ApiError}
  */
 class UnauthorizedOperationError extends ApiError {
-  constructor(...args) {
-    if (args.length > 0) super(args);
-    else super('NOT_AUTHORIZED_OPERATION', 'Not authorized to perform operation on this endpoint');
+  constructor() {
+    super('NOT_AUTHORIZED_OPERATION', 'Not authorized to perform operation on this endpoint');
 
     /**
      * Name of the error

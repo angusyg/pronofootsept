@@ -14,9 +14,8 @@ const { debug } = require('../../helpers/logger')(ns);
  * @extends {ApiError}
  */
 class UnauthorizedAccessError extends ApiError {
-  constructor(...args) {
-    if (args.length > 0) super(args);
-    else super('NOT_AUTHORIZED_ACCESS', 'Not authorized to access to this endpoint');
+  constructor() {
+    super('NOT_AUTHORIZED_ACCESS', 'Not authorized to access to this endpoint');
 
     /**
      * Name of the error

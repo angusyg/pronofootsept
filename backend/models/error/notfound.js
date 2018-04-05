@@ -14,9 +14,8 @@ const { debug } = require('../../helpers/logger')(ns);
  * @extends {ApiError}
  */
 class NotFoundError extends ApiError {
-  constructor(...args) {
-    if (args.length > 0) super(args);
-    else super('NOT_FOUND', 'No endpoint mapped for requested url');
+  constructor() {
+    super('NOT_FOUND', 'No endpoint mapped for requested url');
 
     /**
      * Name of the error

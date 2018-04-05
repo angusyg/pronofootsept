@@ -14,9 +14,8 @@ const { debug } = require('../../helpers/logger')(ns);
  * @extends {ApiError}
  */
 class AuthenticationExpiredError extends ApiError {
-  constructor(...args) {
-    if (args.length > 0) super(args);
-    else super('AUTHENTICATION_EXPIRED', 'Access token has expired');
+  constructor() {
+    super('AUTHENTICATION_EXPIRED', 'Access token has expired');
 
     /**
      * Name of the error
