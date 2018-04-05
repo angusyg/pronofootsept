@@ -42,8 +42,23 @@ function getStreams() {
   return streams;
 }
 
+
+// Defines app logger
 const logger = pino({ level: config.debugLevel }, multistream(getStreams()));
-pinoDebug(logger, { auto: false, map: config.debugMapNs });
+
+// Creates debug logger based on pino
+pinoDebug(logger, {
+  auto: false,
+  map: config.debugMapNs
+});
+
+/**
+ * Exports module adds debug logger if requested
+ * @function get
+ * @private
+ * @param  {string}   name  - namespace to use for debug logger
+ * @returns {Object}  logger with or whitout debug logger
+ */
 const get = (name) => {
   if (name) {
     debug(`${config.debugBaseNs}:helpers:logger`)(`${config.debugBaseNs}helpers:logger:get: Creating logger for namespace ${name}`);
